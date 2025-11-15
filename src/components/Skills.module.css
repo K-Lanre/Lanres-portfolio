@@ -1,0 +1,147 @@
+.skills {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.subtitle {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+}
+
+.skillCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: scaleIn 0.5s ease-out;
+  animation-delay: var(--delay);
+  aspect-ratio: 1/1;
+}
+
+.skillCard:hover {
+  border-color: var(--accent);
+  background-color: var(--bg-tertiary);
+  box-shadow: 0 8px 24px rgba(255, 0, 100, 0.2);
+  transform: translateY(-8px);
+}
+
+.skillLogo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .skillLogo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.skillCard:hover .skillLogo {
+  transform: scale(1.2);
+}
+
+.skillName {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .skillName {
+    font-size: 13px;
+  }
+}
+
+.animateScaleIn {
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+  }
+
+  .skillCard {
+    padding: 16px;
+  }
+
+  .skillLogo {
+    font-size: 36px;
+  }
+
+  .skillName {
+    font-size: 14px;
+  }
+}
